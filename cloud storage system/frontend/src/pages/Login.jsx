@@ -12,13 +12,16 @@ const Login = () => {
     e.preventDefault();
     try {
       const response = await axiosInstance.post('/api/auth/login', formData);
-      login(response.data);
-      navigate('/tasks');
-    } catch (error) {
+      if (response.data.token) {
+        login(response.data.token);
+        navigate('/DashboardPage');
+      } else {
+      alert('Login failed: No token received.');
+      }
+    }  catch (error) {
       alert('Login failed. Please try again.');
     }
-  };
-
+};
   return (
     <div className="max-w-md mx-auto mt-20">
       <form onSubmit={handleSubmit} className="bg-white p-6 shadow-md rounded">
