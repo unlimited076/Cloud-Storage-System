@@ -1,4 +1,4 @@
-import { Link, useNavigate } from 'react-router-dom';
+import { NavLink, Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 
 const Navbar = () => {
@@ -16,8 +16,11 @@ const Navbar = () => {
       <div>
         {user ? (
           <>
-            <Link to="/tasks" className="mr-4">CRUD</Link>
-            <Link to="/profile" className="mr-4">Profile</Link>
+            <NavLink to="/DashboardPage" className={({ isActive }) =>
+                isActive ? "mr-4 text-yellow-300 font-bold" : "mr-4 hover:text-gray-200"
+              }>Dashboard</NavLink>
+
+            <NavLink to="/profile" className="mr-4">Profile</NavLink>
             <button
               onClick={handleLogout}
               className="bg-red-500 px-4 py-2 rounded hover:bg-red-700"
