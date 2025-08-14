@@ -27,7 +27,7 @@ const upload = multer({ storage: storage });
  * @desc    
  * @access  
  */
-router.post('/upload', protect, upload.single('file'), async (req, res) => {
+router.post('/uploads', protect, upload.single('file'), async (req, res) => {
     try {
         
         if (!req.file) {
@@ -38,7 +38,7 @@ router.post('/upload', protect, upload.single('file'), async (req, res) => {
 
         
         const newFile = new File({
-            localFileName: filename,
+            localFilename: filename,
             originalName: originalname,
             size: size,
             mimeType: mimetype,
