@@ -17,7 +17,7 @@ function FileUpload({ onUploadSuccess }) {
     formData.append('file', selectedFile);
 
     try {
-      await axios.post('/api/files/upload', formData, {
+      await axios.post('http://localhost:5001/api/files/uploads', formData, {
         headers: { 'Content-Type': 'multipart/form-data' },
       });
       alert('File uploaded successfully!');
