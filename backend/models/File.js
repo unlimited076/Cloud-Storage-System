@@ -31,7 +31,7 @@ const FileSchema = new mongoose.Schema({
 
 
 FileSchema.virtual('url').get(function() {
-    const baseUrl = process.env.BASE_URL || 'http://54.252.42.147:5001';
+    const baseUrl = process.env.BASE_URL || 'http://16.176.228.233:5001';
     return `${baseUrl}/uploads/${this.localFilename}`;
 });
 

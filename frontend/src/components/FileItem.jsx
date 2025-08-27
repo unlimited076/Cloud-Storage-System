@@ -5,7 +5,7 @@ function FileItem({ file, onDeleteSuccess }) {
   const handleDelete = async () => {
     if (window.confirm(`Are you sure you want to delete ${file.originalName}?`)) {
       try {
-        await axios.delete(`http://54.252.42.147:5001/api/files/${file._id}`);
+        await axios.delete(`http://16.176.228.233:5001/api/files/${file._id}`);
         alert('File deleted successfully');
         if (onDeleteSuccess) {
           onDeleteSuccess();

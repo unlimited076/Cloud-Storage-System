@@ -16,7 +16,7 @@ function DashboardPage() {
     setIsLoading(true); 
     setError(null); 
     try {
-      const response = await axios.get('http://54.252.42.147:5001/api/files');
+      const response = await axios.get('http://16.176.228.233:5001/api/files');
       setFiles(response.data);
     } catch (err) {
       console.error('Failed to fetch files:', err);
